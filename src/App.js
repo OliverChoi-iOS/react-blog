@@ -9,13 +9,15 @@ import PostList from './components/PostList'
 import PostDetail from './components/PostDetail'
 import './App.css';
 
+
+var testList = [{ postTitle: "제목 1", postDate: "2021.02.24", postContent: "첫 번째 포스트" }
+, { postTitle: "제목 2", postDate: "2021.02.23", postContent: "두 번째 포스트" }];
+
 function App() {
   var [mode, setMode] = useState('home');
   var [postTitle, setPostTitle] = useState('');
   var [postDate, setPostDate] = useState('');
   var [postContent, setPostContent] = useState('');
-  var testList = [{ postTitle: "제목 1", postDate: "2021.02.24", postContent: "첫 번째 포스트" }
-                , { postTitle: "제목 2", postDate: "2021.02.23", postContent: "두 번째 포스트" }];
   var data = testList;
 
   var mainSection = null;
