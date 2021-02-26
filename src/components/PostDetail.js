@@ -1,4 +1,4 @@
-import { createMuiTheme, Fab, makeStyles } from '@material-ui/core';
+import { createMuiTheme, Fab, makeStyles, Typography } from '@material-ui/core';
 import { ArrowBack, Delete, Edit } from '@material-ui/icons';
 
 const useButtonStyles = makeStyles({
@@ -22,7 +22,9 @@ function PostDetail(props) {
             <article>
                 <h1>{ postTitle }</h1>
                 <p>{ postDate }</p>
-                <div>{ postContent }</div>
+                <Typography>
+                { postContent }
+                </Typography>
             </article>
             <Fab aria-label="edit" classes={{root: classes.root}}>
                 <Edit/>

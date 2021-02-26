@@ -7,7 +7,7 @@ function Header(props) {
 
   return (
     <header className="top-nav">
-      <div className="menu" onClick={() => {setMenuOpen(true)}}><MenuSharp /></div>
+      <div className="menu" onClick={() => {setMenuOpen(true)}}><MenuSharp fontSize='large' /></div>
       <div className="logo" onClick={props.onLogoClick}>Dinggick's Blog</div>
       <Menu open={menuOpen} 
             onHomeClick={() => {

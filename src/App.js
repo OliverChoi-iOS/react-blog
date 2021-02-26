@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Fab } from '@material-ui/core';
+import { Fab, Grow } from '@material-ui/core';
 import { Add, Edit, EditIcon } from '@material-ui/icons';
 import logo from './logo.svg';
 import Header from './components/Header'
@@ -48,7 +48,6 @@ function App() {
               onAboutClick={ () => {setMode('about')} }
               onPostListClick={ () => {setMode('postList')} }/>
       { mainSection }
-      
     </div>
   );
 }
