@@ -16,7 +16,8 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.get('/api/posts', (req, res) => {
-    res.send(testList);
+    setTimeout(() => {res.send(testList)}, 3000);
+    
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

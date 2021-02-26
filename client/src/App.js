@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Fab } from '@material-ui/core';
+import { CircularProgress, Fab } from '@material-ui/core';
 import { Add, Edit, EditIcon } from '@material-ui/icons';
 import logo from './logo.svg';
 import Header from './components/Header'
@@ -33,13 +33,13 @@ function App() {
   } else if(mode == 'about') {
     mainSection = <About />
   } else if(mode == 'postList') {
-    mainSection = <PostList postData={ data } 
+    mainSection = data ? <PostList postData={ data } 
                         onPostClick={ (postTitle, postDate, postContent) => {
                           setMode('postDetail');
                           setPostTitle(postTitle);
                           setPostDate(postDate);
                           setPostContent(postContent);
-                        }}/>;
+                        }}/> : <CircularProgress />;
   } else if(mode == 'postDetail') {
     mainSection = <PostDetail postTitle={ postTitle }
                           postDate={ postDate }
