@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Fab } from '@material-ui/core';
 import { Add, Edit, EditIcon } from '@material-ui/icons';
 import logo from './logo.svg';
@@ -9,16 +9,23 @@ import PostList from './components/PostList'
 import PostDetail from './components/PostDetail'
 import './App.css';
 
-
-var testList = [{ postTitle: "제목 1", postDate: "2021.02.24", postContent: "첫 번째 포스트" }
-, { postTitle: "제목 2", postDate: "2021.02.23", postContent: "두 번째 포스트" }];
+async function getPosts() {
+  const response = await fetch('/api/posts');
+  const responseData = await response.json();
+  return responseData;
+}
 
 function App() {
   var [mode, setMode] = useState('home');
   var [postTitle, setPostTitle] = useState('');
   var [postDate, setPostDate] = useState('');
   var [postContent, setPostContent] = useState('');
-  var data = testList;
+  var [data, setData] = useState('');
+
+  useEffect(() => {
+    getPosts().then(res => setData(res))
+              .catch(err => console.log(err));
+  });
 
   var mainSection = null;
   if(mode == 'home') {
