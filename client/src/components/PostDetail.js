@@ -1,4 +1,4 @@
-import { createMuiTheme, Fab, makeStyles, Typography } from '@material-ui/core';
+import { Fab, makeStyles, Typography } from '@material-ui/core';
 import { ArrowBack, Delete, Edit } from '@material-ui/icons';
 
 const useButtonStyles = makeStyles({

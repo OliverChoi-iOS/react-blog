@@ -1,5 +1,4 @@
 import { Divider } from '@material-ui/core';
-import { useState } from 'react';
 
 function Post(props) {
     var postTitle = props.postTitle;

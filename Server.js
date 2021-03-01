@@ -16,7 +16,7 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.get('/api/posts', (req, res) => {
-    setTimeout(() => {res.send(testList)}, 3000);
+    setTimeout(() => {res.send(testList)}, 1000);
     
 });
 
