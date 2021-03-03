@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
     arrowBack: {
-        marginBottom: '30px'
+        marginBottom: '100px'
     },
     postTitle: {
         width: '80%',
