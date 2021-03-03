@@ -1,6 +1,6 @@
 import { CircularProgress, Fab } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Post from './Post';
 
 async function getPosts() {
@@ -15,7 +15,7 @@ function PostList(props) {
     useEffect(() => {
         getPosts().then(res => setPostData(res))
                   .catch(err => console.log(err));
-      });
+    }, []);
 
     var postList = postData ? postData.map((data) => 
         <Post postTitle={ data.postTitle } 
@@ -25,8 +25,8 @@ function PostList(props) {
     ) : '';
     
     var buttons = postList ? <Fab color="primary" aria-label="add" onClick={props.onAddClick}>
-                      <Add/>
-                  </Fab> : <CircularProgress />;
+                                 <Add/>
+                             </Fab> : <CircularProgress />;
 
     return (
         <section className="post-list">
