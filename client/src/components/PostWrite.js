@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function PostWrite(props) {
-    var [postTitle, setPostTitle] = useState('');
-    var [postContent, setPostContent] = useState('');
+    var [postTitle, setPostTitle] = useState(props.postTitle);
+    var [postContent, setPostContent] = useState(props.postContent);
 
     const classes = useStyles();
     return (

@@ -13,6 +13,12 @@ function App() {
   var [postDate, setPostDate] = useState('');
   var [postContent, setPostContent] = useState('');
 
+  const initState = () => {
+    setPostTitle('');
+    setPostDate('');
+    setPostContent('');
+  };
+
   var mainSection = null;
   if(mode === 'home') {
     mainSection = <Home />
@@ -26,6 +32,7 @@ function App() {
                               setPostContent(postContent);
                             }}
                             onAddClick={ () => {
+                              initState();
                               setMode('postWrite');
                             }}/>;
   } else if(mode === 'postDetail') {
@@ -34,9 +41,14 @@ function App() {
                               postContent={ postContent }
                               onBackArrowClick={ () => {
                                 setMode('postList');
+                              }}
+                              onEditClick={ () => {
+                                setMode('postWrite');
                               }}/>;
   } else if(mode === 'postWrite') {
-    mainSection = <PostWrite onBackArrowClick={ () => {
+    mainSection = <PostWrite postTitle={ postTitle }
+                             postContent={ postContent }
+                             onBackArrowClick={ () => {
                                setMode('postList');
                              }}/>;
   }

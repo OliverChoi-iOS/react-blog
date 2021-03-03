@@ -26,7 +26,7 @@ function PostDetail(props) {
                 { postContent }
                 </Typography>
             </article>
-            <Fab aria-label="edit" classes={{root: classes.root}}>
+            <Fab aria-label="edit" classes={{root: classes.root}} onClick={props.onEditClick}>
                 <Edit/>
             </Fab>
             <Fab color="secondary" aria-label="remove" classes={{root: classes.root}}>
